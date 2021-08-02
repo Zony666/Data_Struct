@@ -21,8 +21,8 @@ void rightconnect(btNode* senior, btNode* junior);
 void leftconnect(btNode* senior, btNode* junior);
 void btnodeCount();
 void btleaveCount();
-void PreorderTraversal();
-void MidorderTraversal();
-void PostorderTraversal();
+void PreorderTraversal(btNode*root);
+void MidorderTraversal(btNode*root);
+void PostorderTraversal(btNode*root);
 
 

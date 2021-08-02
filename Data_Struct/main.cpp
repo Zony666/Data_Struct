@@ -1,7 +1,7 @@
 #include"linklist.h"
 #include "stack.h"
 #include"queue.h"
-
+#include"bintree.h"
 void linklist_test()
 {
 	Linklist* l = initlinklist();
@@ -67,11 +67,43 @@ void queuetest()
 	printqueue(q);
 	printf("%d", queueusing(q));
 }
+void bintreetest()
+{
+	/*
+			构建的二叉树：
+			  root0
+			 /    \
+			a1     b2
+		   /      / \
+	      c3     d4  e5
+		  \
+		   f6
+	*/
 
+	Bitree* tree = initbtree(0);
+	btNode* a1 = creatbtnode(1);
+	btNode* b2 = creatbtnode(2);
+	btNode* c3 = creatbtnode(3);	
+	btNode* d4 = creatbtnode(4);									
+	btNode* e5 = creatbtnode(5);
+	btNode* f6 = creatbtnode(6);
+	leftconnect(tree->root,a1);
+	rightconnect(tree->root, b2);
+	leftconnect(a1,c3);
+	leftconnect(b2,d4);
+	rightconnect(b2,e5);
+	rightconnect(c3, f6);
+	printf("先序：");
+	PreorderTraversal(tree->root);
+	printf("\n中序：");
+	MidorderTraversal(tree->root);
+	printf("\n后序：");
+	PostorderTraversal(tree->root);
+}
 int main()
 {
 	
-	queuetest();
+	bintreetest();
 
 	return 0;
 }

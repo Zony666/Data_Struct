@@ -23,17 +23,32 @@ void rightconnect(btNode* senior, btNode* junior)
 	senior->rc = junior;
 }
 
-void PreorderTraversal() 
+void PreorderTraversal(btNode*root) 
 {
-
+	if (root)
+	{
+		printf("%d -> ", root->data);
+		PreorderTraversal(root->lc);
+		PreorderTraversal(root->rc);
+	}
 }
-void MidorderTraversal() 
+void MidorderTraversal(btNode* root)
 {
-
+	if (root)
+	{
+		MidorderTraversal(root->lc);
+		printf("%d -> ", root->data);
+		MidorderTraversal(root->rc);
+	}
 }
-void PostorderTraversal() 
+void PostorderTraversal(btNode*root) 
 {
-
+	if (root)
+	{
+		MidorderTraversal(root->lc);
+		MidorderTraversal(root->rc);
+		printf("%d -> ", root->data);
+	}
 }
 
 
