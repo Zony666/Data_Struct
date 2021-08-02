@@ -45,12 +45,15 @@ void PostorderTraversal(btNode*root)
 {
 	if (root)
 	{
-		MidorderTraversal(root->lc);
-		MidorderTraversal(root->rc);
+		PostorderTraversal(root->lc);
+		PostorderTraversal(root->rc);
 		printf("%d -> ", root->data);
 	}
 }
+void LayerorderTraversal(btNode*root )
+{
 
+}
 
 void btDepth() 
 {

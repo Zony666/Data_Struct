@@ -24,5 +24,5 @@ void btleaveCount();
 void PreorderTraversal(btNode*root);
 void MidorderTraversal(btNode*root);
 void PostorderTraversal(btNode*root);
-
+void LayerorderTraversal(btNode* root);
 
