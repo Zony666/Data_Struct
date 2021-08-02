@@ -1,32 +1,26 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-typedef struct bintnode{
-	int data;
-	struct bintnode* lc;
-	struct bintnode* rc;
-}btNode;
-
-typedef struct bitree{
-	btNode* root;
-}Bitree;
-
-void creatbtnode()
+#include"bintree.h"
+btNode* creatbtnode(int data)
 {
-
+	btNode* btn = (btNode*)malloc(sizeof(btNode));
+	btn->data = data;
+	btn->lc = NULL;
+	btn->rc = NULL;
+	return btn;
 }
-void initbtree()
+Bitree* initbtree(int rootdata)
 {
-
+	Bitree* bt = (Bitree*)malloc(sizeof(Bitree));
+	bt->root = creatbtnode(rootdata);
+	return bt;
 }
 
-void leftconnect()
+void leftconnect(btNode* senior,btNode*junior)
 {
-
+	senior->lc = junior;
 }
-void rightconnect()
+void rightconnect(btNode* senior, btNode* junior)
 {
-
+	senior->rc = junior;
 }
 
 void PreorderTraversal() 
