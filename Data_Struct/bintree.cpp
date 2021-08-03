@@ -1,9 +1,10 @@
 #include"bintree.h"
+
 btNode* creatbtnode(int data)
 {
 	btNode* btn = (btNode*)malloc(sizeof(btNode));
 	btn->data = data;
-	btn->lc = NULL;
+	btn->lc=NULL;
 	btn->rc = NULL;
 	return btn;
 }
@@ -50,23 +51,7 @@ void PostorderTraversal(btNode*root)
 		printf("%d -> ", root->data);
 	}
 }
-void LayerorderTraversal(btNode*root )
-{
 
-}
-
-void btDepth() 
-{
-
-}
-void btleaveCount() 
-{
-
-}
-void btnodeCount() 
-{
-
-}
 
 
 

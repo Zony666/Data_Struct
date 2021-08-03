@@ -1,7 +1,8 @@
 #include"linklist.h"
 #include "stack.h"
-#include"queue.h"
 #include"bintree.h"
+#include"queue.h"
+
 void linklist_test()
 {
 	Linklist* l = initlinklist();
@@ -60,11 +61,11 @@ void queuetest()
 	enqueue(q, 4);
 	enqueue(q, 5);
 	enqueue(q, 6);
-	printqueue(q);
+	printintqueue(q);
 	dequeue(q);
-	printqueue(q);
+	printintqueue(q);
 	enqueue(q,7);
-	printqueue(q);
+	printintqueue(q);
 	printf("%d", queueusing(q));
 }
 void bintreetest()

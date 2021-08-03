@@ -3,7 +3,7 @@
 Queue* initqueue(int maxsize)
 {
 	Queue* q = (Queue*)malloc(sizeof(Queue));
-	q->front = (int*)malloc(sizeof(int)*(maxsize+1));
+	q->front = (datatype*)malloc(sizeof(datatype)*(maxsize+1));
 	q->rear = q->front;
 	q->maxsize = maxsize;
 	q->usage = 0;
@@ -28,7 +28,7 @@ int queueusing(Queue*q)
 	return q->usage;
 }
 
-void enqueue(Queue* q,int data)
+void enqueue(Queue* q,datatype data)
 {
 	if (queue_isfull(q))
 		return;
@@ -36,30 +36,27 @@ void enqueue(Queue* q,int data)
 	*(q->rear) = data;
 	q->usage++;
 }
-
-int dequeue(Queue*q)
+void dequeue(Queue*q)
 {
 	if (queue_isempty(q))
-		return 404;
-	int* t = q->front + 1;
-	int* pre = t + 1;
-	int data = *t;
+		return;
+	datatype* t = q->front + 1;
+	datatype* pre = t + 1;
 	*t = NULL;
 	while (pre != q->rear)
 	{
 		*t = *pre;
-		*pre = NULL;
+		*pre=NULL;
 		t++;
 		pre++;
 	}
 	*t = *pre;
-	*pre = NULL;
+	*pre=NULL;
 	q->rear = t;
 	q->usage--;
-	return data;
 }
 
-void printqueue(Queue*q)
+void printintqueue(Queue*q)
 {
 	if (queue_isempty(q))
 		return;

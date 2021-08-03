@@ -2,19 +2,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
+typedef int datatype;
 
 typedef struct queue {
-	int* front;
-	int* rear;
+	datatype* front;
+	datatype* rear;
 	int maxsize;
 	int usage;
 }Queue;
 
-int dequeue(Queue* q);
-void enqueue(Queue* q, int data);
+void dequeue(Queue* q);
+void enqueue(Queue* q, datatype data);
 Queue* initqueue(int maxsize);
-void printqueue(Queue* q);
+void printintqueue(Queue* q);
 bool queue_isempty(Queue* q);
 bool queue_isfull(Queue* q);
 int queueusing(Queue* q);

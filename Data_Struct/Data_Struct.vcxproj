@@ -141,7 +141,9 @@
   <ItemGroup>
     <ClCompile Include="bintree.cpp" />
     <ClCompile Include="linklist.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main.cpp">
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</SDLCheck>
+    </ClCompile>
     <ClCompile Include="queue.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
